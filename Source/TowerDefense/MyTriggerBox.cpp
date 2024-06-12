@@ -2,7 +2,7 @@
 
 
 #include "MyTriggerBox.h"
-#include "Engine/Engine.h"
+#include "SpawnedEntity.h"
 
 AMyTriggerBox::AMyTriggerBox()
 {
@@ -12,18 +12,21 @@ AMyTriggerBox::AMyTriggerBox()
 void AMyTriggerBox::BeginPlay()
 {
 	Super::BeginPlay();
-	OnActorEndOverlap.AddDynamic(this, &AMyTriggerBox::OnOverlapEnd);
 	OnActorBeginOverlap.AddDynamic(this, &AMyTriggerBox::OnOverlapBegin);
-	DrawDebugBox(GetWorld(), GetActorLocation(), GetComponentsBoundingBox().GetExtent(), FColor::Purple, true, -1, 0, 5);
 }
 
-void AMyTriggerBox::OnOverlapBegin(AActor* OverlappedActor, AActor* OtherActor)
+void AMyTriggerBox::Tick(float DeltaTime)
 {
-	GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, TEXT("Some debug message!"));
+	Super::Tick(DeltaTime);
+
 }
 
-void AMyTriggerBox::OnOverlapEnd(AActor* OverlappedActor, AActor* OtherActor)
+void AMyTriggerBox::OnOverlapBegin(AActor* _overlapped, AActor* _overlap)
 {
-
+	TObjectPtr<ASpawnedEntity> _entity = Cast<ASpawnedEntity>(_overlap);
+	if (!_entity)return;
+	UE_LOG(LogTemp, Warning, TEXT("Overlap"));
+	_entity->Destroy();
 }
+
 

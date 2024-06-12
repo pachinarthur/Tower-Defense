@@ -19,11 +19,10 @@ public:
 	AMyTriggerBox();
 	//créer des fonctions pour les événements de début et de fin de chevauchement
 	UFUNCTION()
-		void OnOverlapBegin(class AActor* OverlappedActor, class AActor* OtherActor);
-	UFUNCTION()
-		void OnOverlapEnd(class AActor* OverlappedActor, class AActor* OtherActor);
+		void OnOverlapBegin(AActor* _overlapped, AActor* _overlap);
 
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
+	virtual void Tick(float DeltaTime) override;
 };
