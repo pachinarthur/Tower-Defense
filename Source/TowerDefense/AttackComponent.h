@@ -12,8 +12,6 @@ UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
 class TOWERDEFENSE_API UAttackComponent : public UActorComponent
 {
 	GENERATED_BODY()
-		UPROPERTY(EditAnywhere)
-			TSubclassOf<AProjectile> projectileToShoot = nullptr;
 	UPROPERTY(EditAnywhere)
 		TSubclassOf<AProjectileDegats> projectileDegatsToShoot = nullptr;
 		UPROPERTY(EditAnywhere)

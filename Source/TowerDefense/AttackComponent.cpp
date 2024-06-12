@@ -40,7 +40,6 @@ void UAttackComponent::Attack()
 	if (!canAttack || !target)return;
 	if (FVector::Dist(GetOwner()->GetActorLocation(), target->GetActorLocation()) > attackRange)return;
 	const FVector _spawnLocation = GetOwner()->GetActorLocation() + GetOwner()->GetActorUpVector() * 100;
-	//TObjectPtr<AProjectile> _projectile = GetWorld()->SpawnActor<AProjectile>(projectileToShoot,_spawnLocation,FRotator::ZeroRotator);
 	TObjectPtr<AProjectileDegats> _projectile = GetWorld()->SpawnActor<AProjectileDegats>(projectileDegatsToShoot,_spawnLocation,FRotator::ZeroRotator);
 	if (!_projectile)return;
 	//if(!IsValid(_projectile))return;
