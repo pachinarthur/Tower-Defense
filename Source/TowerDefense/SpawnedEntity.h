@@ -20,7 +20,7 @@ class TOWERDEFENSE_API ASpawnedEntity : public AActor
 		UPROPERTY(EditAnywhere)
 			TObjectPtr<UMovementCompo> movement = nullptr;
 		UPROPERTY(EditAnywhere)
-			int health = 3;
+			int health = 10;
 		UPROPERTY(EditAnywhere)
 			TObjectPtr<AProtoSpawner> spawnerRef = nullptr;
 public:

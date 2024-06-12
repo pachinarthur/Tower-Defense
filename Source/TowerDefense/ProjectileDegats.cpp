@@ -42,7 +42,6 @@ void AProjectileDegats::TriggerOverlap(AActor* _overlapped, AActor* _overlap)
 {
 	TObjectPtr<ASpawnedEntity> _entity = Cast<ASpawnedEntity>(_overlap);
 	if (!_entity) {
-		UE_LOG(LogTemp, Warning, TEXT("Not _overlap"));
 		return;
 	}
 	_entity->AddHealth(-damage);

@@ -17,7 +17,7 @@ void AMyTriggerBox::BeginPlay()
 
 void AMyTriggerBox::Tick(float DeltaTime)
 {
-	Super::Tick(DeltaTime);
+	PrimaryActorTick.bCanEverTick = true;
 
 }
 
