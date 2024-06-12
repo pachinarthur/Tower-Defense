@@ -41,4 +41,6 @@ protected:
 public:	
 	void AddHealth(const int& _valueToAdd);
 	void Init(TObjectPtr<AProtoSpawner> _spawner);
+	UFUNCTION(BlueprintCallable)
+	bool GetcanMove() { return movement->GetCanMove(); }
 };

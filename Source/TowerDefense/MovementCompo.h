@@ -15,7 +15,7 @@ class TOWERDEFENSE_API UMovementCompo : public UActorComponent
 		DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnPathReceveid, bool, _value);
 	UPROPERTY(EditAnywhere)
 		FOnPathReceveid onPathReceveid;
-
+protected:
 	UPROPERTY(EditAnywhere)
 		TObjectPtr<AActor> customOwner = nullptr;
 	UPROPERTY(EditAnywhere)
@@ -26,12 +26,13 @@ class TOWERDEFENSE_API UMovementCompo : public UActorComponent
 		int pathCurrentIndex = 0;
 	UPROPERTY(EditAnywhere)
 		float moveSpeed = 300;
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 		bool canMove = false;
 	UPROPERTY(EditAnywhere)
 		float minDistAllowed = 100;
 	UPROPERTY(EditAnywhere)
 		float rotationSpeed = 300;
+
 public:
 	UFUNCTION()
 		void SetCanMove(bool _value) { canMove = _value; }
@@ -52,6 +53,6 @@ protected:
 	void Debug();
 	void Rotate();
 public:	
-
+	bool GetCanMove() { return canMove; }
 		
 };
