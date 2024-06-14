@@ -41,7 +41,7 @@ protected:
 	void Attack();
 	void CoolDownTime(float& _current,const float& _max);
 public:	
-	// Called every frame
+	void Fire();
 	UFUNCTION()
 		void SetTarget(AActor* _newTarget);
 		

@@ -13,7 +13,7 @@ class TOWERDEFENSE_API AProjectileDegats : public AActor
 
 	DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnTargetReach);
 	UPROPERTY()
-		FOnTargetReach onTargetReach;
+	FOnTargetReach onTargetReach;
 	UPROPERTY(EditAnywhere)
 		TObjectPtr<UStaticMeshComponent> mesh = nullptr;
 	UPROPERTY(EditAnywhere)

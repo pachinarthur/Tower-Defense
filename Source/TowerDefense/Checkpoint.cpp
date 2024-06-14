@@ -25,6 +25,10 @@ void ACheckpoint::BeginPlay()
 void ACheckpoint::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-
+	//Debug();
 }
 
+void ACheckpoint::Debug()
+{
+	DrawDebugSphere(GetWorld(), GetActorLocation(), 15, 10, FColor::Black, false, -1, 0, 2);
+}

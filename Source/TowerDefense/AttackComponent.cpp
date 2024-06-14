@@ -57,6 +57,11 @@ void UAttackComponent::CoolDownTime(float& _current, const float& _max)
 
 }
 
+void UAttackComponent::Fire()
+{
+	UE_LOG(LogTemp, Warning, TEXT("PEEW PEEW"));
+}
+
 void UAttackComponent::SetTarget(AActor* _newTarget)
 {
 	if (!_newTarget) {

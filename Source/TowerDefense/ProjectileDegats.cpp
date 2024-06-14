@@ -37,7 +37,7 @@ void AProjectileDegats::Move()
 	SetActorLocation(_newLoc);
 }
 
-
+		
 void AProjectileDegats::TriggerOverlap(AActor* _overlapped, AActor* _overlap)
 {
 	TObjectPtr<ASpawnedEntity> _entity = Cast<ASpawnedEntity>(_overlap);
